@@ -1,4 +1,4 @@
-.cards > ul {
+.cards>ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -7,8 +7,7 @@
   gap: 24px;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
+.cards>ul>li {
   background-color: var(--background-color);
 }
 
@@ -20,8 +19,34 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards>ul>li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards .cards-card-body>p:first-child {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+
+.cards .cards-card-body>p:nth-child(2) {
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(105, 105, 105);
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 260px;
+}
+
+#recent-article::after {
+  border-bottom: 2px solid var(--brandPrimary, #ffea00);
+  content: "";
+  display: block;
+  padding-top: 8px;
+  width: 84px;
 }
