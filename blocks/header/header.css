@@ -89,6 +89,10 @@ header nav a.button:any-link {
   text-transform: uppercase;
 }
 
+header nav a.button.active {
+  background-color: #ffea00;
+}
+
 header span.icon.icon-search {
   background: #ccc;
   padding: 12px;
