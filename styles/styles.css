@@ -272,3 +272,16 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+.inner-page {
+  padding-top: var(--nav-height);
+}
+
+
+#our-contributors::after {
+  border-bottom: 2px solid var(--brandPrimary, #ffea00);
+  content: "";
+  display: block;
+  padding-top: 8px;
+  width: 84px;
+}

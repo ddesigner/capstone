@@ -1,0 +1,30 @@
+.social>div>div p {
+    display: flex;
+}
+
+.social ul {
+    margin: 0;
+    padding: 0;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 10px 15px;
+    background: #202020;
+    background: #202020;
+    color: var(--background-color);
+}
+
+.social a svg {
+    fill: var(--background-color);
+}
+
+.social-icon:hover svg {
+    fill: var(--link-hover-color);
+}
