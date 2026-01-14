@@ -16,5 +16,10 @@ export default async function decorate(block) {
   const footer = document.createElement('div');
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
+  const picture = footer.querySelector('picture');
+  if (picture) {
+    picture.parentElement.classList.add('footer-logo');
+  }
+
   block.append(footer);
 }
