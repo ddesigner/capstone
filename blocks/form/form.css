@@ -1,0 +1,117 @@
+/* ----------------------------------------------------------
+ * Base form visibility
+ * ---------------------------------------------------------- */
+.form [aria-hidden='true'] {
+    display: none;
+}
+
+/* ----------------------------------------------------------
+   * Inputs, textarea, button
+   * ---------------------------------------------------------- */
+.form input,
+.form textarea,
+.form button {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font: inherit;
+}
+
+/* ----------------------------------------------------------
+   * Text input & textarea styling
+   * ---------------------------------------------------------- */
+.form input,
+.form textarea {
+    margin-top: 0.25em;
+    padding: 0.5em 0.75em;
+    border: 1px solid var(--dark-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: var(--body-font-size-s);
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+/* ----------------------------------------------------------
+   * Hover & focus
+   * ---------------------------------------------------------- */
+.form input:hover,
+.form textarea:hover,
+.form button:hover {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* ----------------------------------------------------------
+   * Disabled & readonly
+   * ---------------------------------------------------------- */
+.form input:disabled,
+.form textarea:disabled,
+.form input[readonly],
+.form textarea[readonly] {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.form input[readonly]:focus,
+.form textarea[readonly]:focus {
+    outline: 0;
+}
+
+/* ----------------------------------------------------------
+   * Labels & required indicator
+   * ---------------------------------------------------------- */
+.form label {
+    display: block;
+    text-transform: capitalize;
+}
+
+.form label[data-required]::after {
+    content: '*';
+    margin-left: 0.25ch;
+    color: firebrick;
+}
+
+/* ----------------------------------------------------------
+   * Field wrapper spacing
+   * ---------------------------------------------------------- */
+.form .form-field+.form-field {
+    margin-top: 1em;
+}
+
+/* ----------------------------------------------------------
+   * Help text
+   * ---------------------------------------------------------- */
+.form .field-help-text {
+    margin-top: 0.2em;
+    font-size: var(--body-font-size-xs);
+    color: var(--dark-color);
+}
+
+/* ----------------------------------------------------------
+   * Submit button
+   * ---------------------------------------------------------- */
+.form button {
+    margin-top: 1em;
+    padding: 0.6em 1em;
+    background-color: #ffea00;
+    color: #000;
+    cursor: pointer;
+}
+
+.form button:disabled,
+.form button:hover:disabled {
+    cursor: progress;
+    opacity: 0.8;
+}
+
+/* ----------------------------------------------------------
+   * Responsive (optional)
+   * ---------------------------------------------------------- */
+@media (width >=600px) {
+    .form button {
+        width: max-content;
+    }
+}
