@@ -1,0 +1,43 @@
+.article .article-container>ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 20px;
+}
+
+
+.article .article-container>ul>li .article-img {
+  height: auto;
+  width: 100%;
+}
+
+.article .article-container>ul>li .article-img img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+
+.article .article-container>ul>li .article-details {
+  margin: 0;
+}
+
+.article .article-container>ul>li .article-details .title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+
+.article .article-container>ul>li .article-details .description {
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(105, 105, 105);
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 260px;
+}
