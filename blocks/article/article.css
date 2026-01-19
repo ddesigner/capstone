@@ -41,3 +41,11 @@
   white-space: nowrap;
   width: 260px;
 }
+
+.article h3 {
+  border-bottom: 2px solid var(--brandPrimary, #ffea00);
+  content: "";
+  display: block;
+  padding-top: 8px;
+  width: 84px;
+}
