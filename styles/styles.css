@@ -279,7 +279,8 @@ main .section.highlight {
 
 
 #our-contributors::after,
-#all-articles::after {
+#all-articles::after,
+#faqs::after {
   border-bottom: 2px solid var(--brandPrimary, #ffea00);
   content: "";
   display: block;
