@@ -28,4 +28,7 @@ indices:
 
       lastModified:
         select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+        value: formatTimestamp(
+           parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY HH:mm:ss GMT"),
+           "YYYY-MM-DDTHH:mm:ssZ"
+         )
