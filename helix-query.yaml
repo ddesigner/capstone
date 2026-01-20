@@ -1,39 +1,31 @@
 
 version: 1
- 
+
 indices:
   pages:
     include:
       - "/**"
     exclude:
-      - "/**/*.json"  
-    target: query-index.json
-    properties: 
-      path:
-        select: html
-        value: location()
+      - "/**.json"
+    target: /query-index.json
 
-      # Title from Open Graph (present in your HTML)
+    properties:
+      path:
+        select: none
+        value: path
+
       ogTitle:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
 
-      # Description (present in your HTML)
       description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
 
-      # Robots (only if you actually render it)
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
 
-      # Last modified — add multiple fallbacks that EDS sites commonly use.
-      # IMPORTANT: at least one of these must exist on the page.
       lastModified:
-        select: |
-          head > meta[property="article:modified_time"],
-          head > meta[property="og:updated_time"],
-          head > meta[name="modified-time"],
-          head > meta[name="last-modified"]
-        value: attribute(el, "content")
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")

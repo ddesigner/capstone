@@ -42,7 +42,7 @@
   width: 260px;
 }
 
-.article h3 {
+.article-container h3::after {
   border-bottom: 2px solid var(--brandPrimary, #ffea00);
   content: "";
   display: block;
