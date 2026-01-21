@@ -52,6 +52,7 @@ export default async function decorate(block) {
             imgWrap.appendChild(img);
             li.appendChild(imgWrap);
 
+
             // Safe text rows (avoid innerHTML for user data)
             const row = (value) => {
                 const div = document.createElement('div');
@@ -71,6 +72,38 @@ export default async function decorate(block) {
             li.appendChild(row(name));
             li.appendChild(row(title));
 
+            // social container 
+            const socialWrap = document.createElement('div');
+            socialWrap.className = 'social-wrap';
+
+            const socials = [
+                { url: writer.facebook, className: 'facebook', label: 'Facebook' },
+                { url: writer.twitter, className: 'twitter', label: 'Twitter' },
+                { url: writer.instagram, className: 'instagram', label: 'Instagram' }
+            ];
+
+            socials.forEach(({ url, className, label }) => {
+                if (typeof url === 'string' && url.trim() !== '') {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    a.className = `social-link ${className}`;
+                    a.setAttribute('aria-label', `${label} profile`);
+
+                    // Optional icon span (or replace with <img> / SVG)
+                    const icon = document.createElement('span');
+                    icon.className = `icon ${className}-icon`;
+                    a.appendChild(icon);
+
+                    socialWrap.appendChild(a);
+                }
+            });
+
+            li.appendChild(socialWrap);
+
+
+            li.appendChild(socialWrap)
             frag.appendChild(li);
         });
 

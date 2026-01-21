@@ -48,3 +48,50 @@
   font-size: 14px;
   margin-top: 10px;
 }
+
+
+
+
+.writer .social-wrap {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.writer .social-link {
+  display: inline-flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #000;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+
+.writer .icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.writer .facebook-icon {
+  background-color: #ccc;
+  -webkit-mask: url('../../icons/facebook.svg') no-repeat center / contain;
+  mask: url('../../icons/facebook.svg') no-repeat center / contain;
+
+}
+
+.writer .twitter-icon {
+  background-color: #ccc;
+  -webkit-mask: url('../../icons/twitter.svg') no-repeat center / contain;
+  mask: url('../../icons/twitter.svg') no-repeat center / contain;
+}
+
+.writer .instagram-icon {
+  background-color: #ccc;
+  -webkit-mask: url('../../icons/instagram.svg') no-repeat center / contain;
+  mask: url('../../icons/instagram.svg') no-repeat center / contain;
+}
