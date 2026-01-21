@@ -10,25 +10,25 @@ indices:
     target: /query-index.json
 
     properties:
-      path:
+      Path:
         select: none
         value: path
 
-      ogTitle:
+      OgTitle:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
 
-      description:
+      Description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
 
-      robots:
+      Robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
 
-      lastModified:
+      LastModified:
         select: none
         value: formatTimestamp(
-           parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY HH:mm:ss GMT"),
-           "YYYY-MM-DDTHH:mm:ssZ"
-         )
+          parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT"),
+          "YYYY-MM-DDTHH:mm:ssZ")
+
