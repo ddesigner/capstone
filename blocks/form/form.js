@@ -41,18 +41,12 @@ function buildHeading(field) {
 }
 
 function buildInput(field) {
-    const {
-        field: fieldName,
-        type = 'text',
-        required,
-        placeholder,
-        default: defaultValue,
-    } = field;
+    const { name, type, label, placeholder, value, options, required, style, fieldId, fieldset, default: defaultValue } = field
 
     const input = createElement('input');
     input.type = type;
-    input.id = generateId(fieldName);
-    input.name = input.id;
+    input.id = generateId(fieldId);
+    input.name = name;
     input.required = required === 'true';
 
     if (placeholder) input.placeholder = placeholder;
@@ -63,7 +57,7 @@ function buildInput(field) {
 
 function buildTextArea(field) {
     const textarea = createElement('textarea');
-    textarea.id = generateId(field.field);
+    textarea.id = generateId(field.fieldId);
     textarea.name = textarea.id;
     textarea.rows = 5;
     textarea.required = field.required === 'true';
@@ -81,15 +75,14 @@ function buildButton(field) {
  * Field wrapper
  * ---------------------------------------------------------- */
 function buildField(field) {
-    const { type, label, help, field: fieldName, required } = field;
-
+    const { name, type, label, help, placeholder, value, options, required, style, fieldId, fieldset } = field
     // Submit
     if (type === 'submit') {
         return buildButton(field);
     }
 
     const wrapper = createElement('div', `form-field ${type}-field`);
-    const inputId = generateId(fieldName);
+    const inputId = generateId(fieldId);
 
     wrapper.append(buildLabel(label, inputId, required === 'true'));
 
