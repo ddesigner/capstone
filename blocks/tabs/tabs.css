@@ -1,0 +1,105 @@
+.tabs .tabs-list {
+    display: flex;
+    gap: 0.5ch;
+    max-width: 100%;
+    font-size: var(--body-font-size-xs);
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+@media (width >=600px) {
+    .tabs .tabs-list {
+        font-size: var(--body-font-size-s);
+    }
+}
+
+@media (width >=900px) {
+    .tabs .tabs-list {
+        font-size: var(--body-font-size-m);
+    }
+}
+
+.tabs .tabs-list button {
+    flex: 0 0 max-content;
+    margin: 0;
+    border-radius: 0;
+    padding: 0.5em;
+    background-color: transparent;
+    color: initial;
+    line-height: unset;
+    text-align: initial;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+    transition: background-color 0.2s;
+}
+
+.tabs .tabs-list button p {
+    margin: 0;
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+    background-color: #000;
+    color: #fff;
+    cursor: initial;
+}
+
+.tabs .tabs-panel {
+    padding: 0;
+    overflow: auto;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+    display: none;
+}
+
+
+.tabs .tabs-panel>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 20px;
+}
+
+
+.tabs .tabs-panel>ul>li .adv-img {
+    height: auto;
+    width: 100%;
+}
+
+.tabs .tabs-panel>ul>li .adv-img img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+
+.tabs .tabs-panel>ul>li .adv-details {
+    margin: 0;
+}
+
+.tabs .tabs-panel>ul>li .adv-details .adv-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.tabs .tabs-panel>ul>li .adv-details .adv-des {
+    font-size: 14px;
+    line-height: 21px;
+    color: rgb(105, 105, 105);
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 260px;
+    margin-top: 0;
+}
+
+#adventures {
+    margin-bottom: 30px;
+}
